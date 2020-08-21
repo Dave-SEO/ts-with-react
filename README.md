@@ -177,3 +177,9 @@ function props(x:any){
 2. 静态类型语言 数据类型检查发生在编译阶段
 ##### Hook
 1. react16.8 用函数组件代替class组件的写法
+##### useState
+1. useState 通过在函数组件里调用它来给组件添加一些内部state，React会在重复渲染时保留这个state，useState 会返回一对值：
+    当前状态和一个让你更新它的函数，你可以在事件处理函数中调用这个函数
+##### useEffect
+1. 函数组件中没有生命周期，可以用来代替他的方法，相当于class 中的生命周期函数：componentDidMount，componentDidUpdate 和 componentWillUnmount 这三个函数的组合
+2. useEffect 第二个参数可以是空数组，它等价于只有componentDidMount 时执行，如果不传第二个参数的话，它就等价于componentDidMount和componentDidUpdate
