@@ -183,3 +183,5 @@ function props(x:any){
 ##### useEffect
 1. 函数组件中没有生命周期，可以用来代替他的方法，相当于class 中的生命周期函数：componentDidMount，componentDidUpdate 和 componentWillUnmount 这三个函数的组合
 2. useEffect 第二个参数可以是空数组，它等价于只有componentDidMount 时执行，如果不传第二个参数的话，它就等价于componentDidMount和componentDidUpdate
+##### 自定义HOOKS
+1. 将组件逻辑提取到可重用的函数中
