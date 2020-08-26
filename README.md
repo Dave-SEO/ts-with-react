@@ -185,3 +185,6 @@ function props(x:any){
 2. useEffect 第二个参数可以是空数组，它等价于只有componentDidMount 时执行，如果不传第二个参数的话，它就等价于componentDidMount和componentDidUpdate
 ##### 自定义HOOKS
 1. 将组件逻辑提取到可重用的函数中
+2. *hook要以use开头*
+##### HOC - Higher order component(高阶组件)
+1. 高阶组件是一个函数，接受一个组件作为参数，返回一个新的组件
