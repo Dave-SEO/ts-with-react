@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{createContext} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import HelloWorld from './components/helloWorld'
@@ -10,6 +10,14 @@ interface ImesgInterface{
   message: string,
   status: string
 }
+interface ITheme {
+  [key:string]:{color: string, background: string}
+}
+const ThemStyle:ITheme = {
+  light: {color: '#ccc', background: 'red'},
+  dart: {color: '#fff', background: 'gold'}
+}
+export const ThemContext = createContext(ThemStyle.light)
 const App:React.FC =() => {
   const position = auseMouseFn()
   const [data, loading] = useLoaderImg('https://dog.ceo/api/breeds/image/random')
@@ -17,12 +25,14 @@ const App:React.FC =() => {
   console.log('result', result,loading )
   return (
     <div className="App">
+      <ThemContext.Provider value={ThemStyle.dart}>
       <header className="App-header">
           <HelloWorld message ='dsa'  />
           <HooksMessage />
           <MouseMove />
         <p>x:{position.x}, y:{position.y}</p>
       </header>
+      </ThemContext.Provider>
     </div>
   );
 }
